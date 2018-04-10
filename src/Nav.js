@@ -19,6 +19,10 @@ const styles = theme => ({
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
+  link : { 
+    textDecoration: 'none'
+  
+  }
 });
 
 
@@ -38,7 +42,7 @@ function Nav(props) {
       <Divider />
       
       <List component="nav">
-       <Link to="/manual">
+       <Link className={classes.link} to="/manual">
          <ListItem button component="div" >
              <ListItemIcon>
                 <DescIcon />
@@ -47,7 +51,7 @@ function Nav(props) {
               
             </ListItem>
        </Link>
-       <Link to="/target">
+       <Link className={classes.link} to="/target">
           <ListItem button component="div" >
            <ListItemIcon>
             <InboxIcon />
@@ -55,7 +59,7 @@ function Nav(props) {
            <ListItemText primary="TARGET TRACK" />
           </ListItem>
         </Link>
-        <Link to="step">
+        <Link className={classes.link} to="step">
           <ListItem button component="div">
             <ListItemIcon>
               <InboxIcon />
@@ -63,8 +67,8 @@ function Nav(props) {
             <ListItemText primary="STEP TRACK" />
           </ListItem>
         </Link>
-        <Link to="config">
-          <ListItem button component="a" href="#simple-list">
+        <Link className={classes.link} to="config">
+          <ListItem button component="div" href="#simple-list">
             <ListItemIcon>
               <SetIcon />
             </ListItemIcon>
