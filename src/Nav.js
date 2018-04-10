@@ -8,6 +8,9 @@ import SetIcon from '@material-ui/icons/Settings';
 import DescIcon from '@material-ui/icons/Description';
 import Box from './Box';
 
+import {Link} from './index.js'
+
+
 
 
 const styles = theme => ({
@@ -20,39 +23,54 @@ const styles = theme => ({
 
 
 function Nav(props) {
-
+  
   const { classes } = props;
+  
+
+
+    
+  
   return (
     <header className={classes.root}>
     
     <Box />
+      
       <Divider />
+      
       <List component="nav">
-        <ListItem button component="a" href="#simple-list">
-          <ListItemIcon>
-          
-            <DescIcon />
-          </ListItemIcon>
-          <ListItemText primary="MANUAL TRACK" />
-        </ListItem>
-        <ListItem button component="a" href="#simple-list">
-          <ListItemIcon>
+       <Link to="/manual">
+         <ListItem button component="div" >
+             <ListItemIcon>
+                <DescIcon />
+              </ListItemIcon>
+              <ListItemText primary="MANUAL TRACK" />
+              
+            </ListItem>
+       </Link>
+       <Link to="/target">
+          <ListItem button component="div" >
+           <ListItemIcon>
             <InboxIcon />
-          </ListItemIcon>
-          <ListItemText primary="TARGET TRACK" />
-        </ListItem>
-        <ListItem button component="a" href="#simple-list">
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <ListItemText primary="STEP TRACK" />
-        </ListItem>
-        <ListItem button component="a" href="#simple-list">
-          <ListItemIcon>
-            <SetIcon />
-          </ListItemIcon>
-          <ListItemText primary="CONFIGURAÇÕES" />
-        </ListItem>
+           </ListItemIcon>
+           <ListItemText primary="TARGET TRACK" />
+          </ListItem>
+        </Link>
+        <Link to="step">
+          <ListItem button component="div">
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary="STEP TRACK" />
+          </ListItem>
+        </Link>
+        <Link to="config">
+          <ListItem button component="a" href="#simple-list">
+            <ListItemIcon>
+              <SetIcon />
+            </ListItemIcon>
+            <ListItemText primary="CONFIGURAÇÕES" />
+          </ListItem>
+        </Link>
 
       </List>
       

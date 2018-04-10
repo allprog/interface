@@ -4,17 +4,25 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import Nav from "./Nav";
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+  } from 'react-router-dom';
+
+
+
 
 class Main extends React.Component {
-
-
-    render(){
+  
+render(){
     return(
-        <div>
-           <Nav />
-           <App/>
-           
-        </div>
+        <Router>
+          <div>
+               <Nav />
+               <App />
+           </div>
+       </Router>
     );
    
     }
@@ -22,6 +30,8 @@ class Main extends React.Component {
 
 
 
-
 ReactDOM.render(<Main />, document.getElementById('root'));
 registerServiceWorker();
+
+
+export {Link,Route} ;

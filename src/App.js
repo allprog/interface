@@ -5,20 +5,13 @@ import FastF from 'material-ui-icons/FastForward';
 import FastR from 'material-ui-icons/FastRewind';
 import Next from 'material-ui-icons/SkipNext';
 import Preview from 'material-ui-icons/SkipPrevious';
-
+import {Route} from './index.js'
 import './App.css';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
+
 
 function Manual(props) {
-  
-
- 
-  const style = {
+    const style = {
     marginRight: 20
   };
   
@@ -54,14 +47,8 @@ class App extends Component {
     return (
       <div className="App">
          
-        <Router>
-          <div>
-        
-       
-         <Route exact path="/" component={Manual} />
-       
-          </div>
-        </Router>
+          <Route path="/manual" component={Manual}  />
+         
       </div>
     );
   }
